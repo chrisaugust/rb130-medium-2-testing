@@ -26,6 +26,13 @@ class TextTest < Minitest::Test
     assert_equal expected_text, vowel_swapped_text
   end
 
+  def test_word_count
+    text = Text.new(@file.read)
+    word_count = text.word_count
+
+    assert_equal 72, word_count
+  end
+
   def teardown
     @file.close
   end
